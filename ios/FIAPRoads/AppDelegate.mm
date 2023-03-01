@@ -7,12 +7,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Info" ofType:@"plist"];
+  NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:filePath];
+  NSString *API_KEY_MAPS = [dict objectForKey:@"API_KEY_MAPS"];
+  
+  [GMSServices provideAPIKey:API_KEY_MAPS];
+  
   self.moduleName = @"FIAPRoads";
   // You can add your custom initial props in the dictionary below.
   // They will be passed down to the ViewController used by React Native.
   self.initialProps = @{};
-
-  [GMSServices provideAPIKey:@"AIzaSyD6X1zKZfMpfE4OwqO7qzjWrdCR3NPqmQA"];
+  
 
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }

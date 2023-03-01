@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">FIAPRoads</string>
+    <string name="API_KEY_MAPS">AIzaSyD6X1zKZfMpfE4OwqO7qzjWrdCR3NPqmQA</string>
 </resources>

@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import MapView, {Marker} from 'react-native-maps';
+import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 import MapViewDirections from 'react-native-maps-directions';
 import Geolocation from '@react-native-community/geolocation';
 import {Alert, SafeAreaView, Text, View} from 'react-native';
@@ -75,6 +75,7 @@ export default function App() {
         <Text style={{fontSize: 24, fontWeight: 'bold'}}>Fiap ROADS</Text>
       </View>
       <MapView
+        provider={PROVIDER_GOOGLE}
         ref={mapRef}
         style={{flex: 1}}
         initialRegion={{
